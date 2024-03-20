@@ -2,6 +2,8 @@
 # Date: 03/18/2024
 
 # encode password function which increments numerical password by three numbers
+
+
 def encode(password):
     encoded_pass = ''
     for i in password:
