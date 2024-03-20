@@ -1,14 +1,14 @@
 # Name: Luke Kutz-Pears
 # Date: 03/18/2024
 
+from decoder import decode
+
 # encode password function which increments numerical password by three numbers
-
-
 def encode(password):
     encoded_pass = ''
     for i in password:
-        encoded_pass += str(int(i) + 3)
-    return int(encoded_pass)
+        encoded_pass += str((int(i) + 3) % 10)
+    return str(encoded_pass)
 
 
 def main():
@@ -24,8 +24,8 @@ def main():
 
         # option 2 decodes the encoded password, which returns the original password
         if choice == 2:
-            # TODO: Implement decoder function and change None placeholder -> original password
-            print(f'The encoded password is {encoded_password}, and the original password is {None}')
+            decoded_password = decode(encoded_password)
+            print(f'The encoded password is {encoded_password}, and the original password is {decoded_password}')
 
         # option 3 exits the program
         if choice == 3:
